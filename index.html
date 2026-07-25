@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Réflexe Escrime Club — Escrime à Abidjan, Cocody</title>
+<meta name="description" content="Réflexe Escrime Club : club d'escrime loisir et compétition à Abidjan, Cocody Riviera Palmeraie. Débutants, amateurs et compétiteurs, enfants et adultes bienvenus.">
+<meta name="theme-color" content="#1F3864">
+<link rel="icon" href="assets/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/logo.png">
+<!-- Open Graph / partage sur les réseaux -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Réflexe Escrime Club — Escrime à Abidjan, Cocody">
+<meta property="og:description" content="Club d'escrime loisir et compétition à Abidjan, Cocody Riviera Palmeraie. Débutants, amateurs et compétiteurs, enfants et adultes bienvenus.">
+<meta property="og:image" content="assets/hero-bg.jpg">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Polices (repli système automatique si hors-ligne) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap">
+<style>
+  :root{
+    --navy:#1F3864;
+    --navy-dark:#12213d;
+    --red:#e2211c;
+    --red-dark:#a8160f;
+    --cyan:#2FB2E6;
+    --bg:#f5f7fa;
+    --line:#e2e8f0;
+    --text:#1a202c;
+    --muted:#5a6472;
+    --font-display:'Outfit','Segoe UI',system-ui,Arial,sans-serif;
+    --font-body:'Manrope','Segoe UI',system-ui,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-body);color:var(--text);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  h1,h2,h3,.brand,.foot-brand{font-family:var(--font-display)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .container{max-width:1140px;margin:0 auto;padding:0 24px}
+  /* Accessibilité : focus clavier visible */
+  a:focus-visible,button:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:4px}
+  /* Ancrage sous le header sticky */
+  section[id]{scroll-margin-top:84px}
+  /* Lien d'évitement pour lecteurs d'écran / clavier */
+  .skip-link{position:absolute;left:12px;top:-48px;background:var(--navy);color:#fff;padding:10px 16px;border-radius:0 0 10px 10px;font-weight:700;z-index:200;transition:top .2s}
+  .skip-link:focus{top:0}
+
+  /* ---------- Animations d'apparition ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{animation-duration:.001ms !important;transition-duration:.001ms !important}
+    .reveal{opacity:1;transform:none}
+  }
+
+  /* ---------- Header ---------- */
+  header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 14px rgba(31,56,100,.06)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 24px;max-width:1140px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--navy);font-size:17px;letter-spacing:.02em}
+  .brand img{height:48px;width:auto}
+  .nav-links{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:600}
+  .nav-links a{color:var(--navy);padding:6px 2px;border-bottom:2px solid transparent;transition:.15s}
+  .nav-links a:hover{border-color:var(--red);color:var(--red)}
+  .nav-links a.active:not(.nav-cta){color:var(--red);border-color:var(--red)}
+  .nav-cta{background:var(--red);color:#fff !important;padding:9px 18px;border-radius:24px;font-weight:700;font-size:14px;border-bottom:none !important}
+  .nav-cta:hover{background:var(--red-dark)}
+  .burger{display:none;font-size:28px;background:none;border:none;color:var(--navy);cursor:pointer;line-height:1}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;color:#fff;padding:120px 24px 130px;text-align:center;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;
+    background:linear-gradient(135deg,rgba(31,56,100,.92) 0%,rgba(18,33,61,.86) 55%,rgba(168,22,15,.82) 130%),
+      url('assets/hero-bg.jpg') center 22%/cover no-repeat;
+    z-index:0}
+  .hero .container{position:relative;z-index:1}
+  .hero h1{font-size:46px;margin-bottom:18px;font-weight:800;line-height:1.12;letter-spacing:-.02em;text-wrap:balance;text-shadow:0 2px 20px rgba(0,0,0,.3)}
+  .hero p{font-size:18px;max-width:640px;margin:0 auto 32px;opacity:.95;text-wrap:pretty}
+  .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;padding:13px 28px;border-radius:28px;font-weight:700;font-size:15px;font-family:var(--font-body);transition:transform .18s ease,background .18s ease,box-shadow .18s ease;cursor:pointer;border:none}
+  .btn-primary{background:var(--red);color:#fff;box-shadow:0 6px 20px rgba(226,33,28,.35)}
+  .btn-primary:hover{background:var(--red-dark);transform:translateY(-2px)}
+  .btn:active{transform:translateY(0) scale(.97)}
+  .btn-outline{border:2px solid #fff;color:#fff}
+  .btn-outline:hover{background:rgba(255,255,255,.15);transform:translateY(-2px)}
+
+  section{padding:76px 24px}
+  .section-title{text-align:center;margin-bottom:12px;color:var(--navy);font-size:31px;font-weight:800;letter-spacing:-.02em;text-wrap:balance}
+  .section-title::after{content:"";display:block;width:64px;height:4px;background:var(--red);border-radius:3px;margin:14px auto 0}
+  .section-sub{text-align:center;color:var(--muted);max-width:620px;margin:0 auto 44px;font-size:16px;text-wrap:pretty}
+
+  /* ---------- Le Club ---------- */
+  .club-alt{background:#fff}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;margin-bottom:56px}
+  .split img{border-radius:16px;box-shadow:0 14px 40px rgba(31,56,100,.18);aspect-ratio:4/3;object-fit:cover;width:100%}
+  .split h2{color:var(--navy);font-size:25px;margin-bottom:16px}
+  .split p{color:var(--muted);margin-bottom:12px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px 26px;text-align:center;transition:.2s}
+  .card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(31,56,100,.14);border-color:transparent}
+  .card .ico{width:60px;height:60px;margin:0 auto 16px;border-radius:16px;background:rgba(31,56,100,.07);display:flex;align-items:center;justify-content:center;color:var(--navy)}
+  .card:hover .ico{background:rgba(226,33,28,.09);color:var(--red)}
+  .card .ico svg{width:30px;height:30px;stroke-width:1.7}
+  .card h3{color:var(--navy);font-size:18px;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:14.5px}
+
+  /* ---------- Activités ---------- */
+  .activites{background:var(--bg)}
+  .niveau-list{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:0 0 52px}
+  .niveau{background:#fff;border-top:4px solid var(--red);border-radius:12px;padding:26px;box-shadow:0 6px 20px rgba(31,56,100,.06);transition:.2s}
+  .niveau:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(31,56,100,.12)}
+  .niveau b{color:var(--navy);display:block;margin-bottom:8px;font-size:17px}
+  .niveau p{color:var(--muted);font-size:14.5px}
+  .planning{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;max-width:580px;margin:0 auto;box-shadow:0 8px 26px rgba(31,56,100,.08)}
+  .planning table{width:100%;border-collapse:collapse}
+  .planning th,.planning td{padding:16px 22px;text-align:left;font-size:15px}
+  .planning th{background:var(--navy);color:#fff;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  .planning tr:nth-child(even) td{background:#fafbfc}
+  .planning td:last-child{font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
+  .lieu{text-align:center;margin-top:22px;color:var(--muted);font-size:15px;display:flex;align-items:center;justify-content:center;gap:8px}
+  .lieu svg{width:18px;height:18px;stroke-width:1.7;color:var(--red);flex-shrink:0}
+
+  /* ---------- Tarifs ---------- */
+  .tarifs{background:#fff}
+  .tarif-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;max-width:760px;margin:0 auto 30px}
+  .tarif{background:linear-gradient(160deg,#fff,#f5f7fa);border:1px solid var(--line);border-radius:18px;padding:34px 30px;text-align:center;position:relative;transition:transform .2s ease,box-shadow .2s ease;display:flex;flex-direction:column}
+  .tarif:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(31,56,100,.14)}
+  .tarif-main{border-color:var(--navy);box-shadow:0 12px 34px rgba(31,56,100,.12)}
+  .tarif-main::before{content:"Formule principale";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:5px 14px;border-radius:20px;white-space:nowrap}
+  .tarif .label{color:var(--muted);font-size:14px;text-transform:uppercase;letter-spacing:.05em;font-weight:700}
+  .tarif .price{color:var(--navy);font-size:34px;font-weight:800;margin:12px 0 4px;font-family:var(--font-display);font-variant-numeric:tabular-nums}
+  .tarif .price span{font-size:16px;font-weight:600;color:var(--muted)}
+  .tarif .desc{color:var(--muted);font-size:13.5px;margin-bottom:22px;text-wrap:pretty}
+  .tarif .btn-primary{width:100%;margin-top:auto}
+  .tarif-lines{list-style:none;text-align:left;margin:16px 0 16px;border-top:1px solid var(--line)}
+  .tarif-lines li{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:15px 0;border-bottom:1px solid var(--line)}
+  .tarif-lines li>span{color:var(--muted);font-size:14.5px}
+  .tarif-lines li b{color:var(--navy);font-family:var(--font-display);font-size:23px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .tarif-lines li b span{font-size:13px;font-weight:600;color:var(--muted)}
+  .tarif-lines li b em{font-size:13px;font-weight:600;color:var(--muted);font-style:normal}
+  .tarif-notes{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;color:var(--navy);font-weight:600;font-size:14.5px}
+  .tarif-notes span{display:inline-flex;align-items:center;gap:8px}
+  .tarif-notes .chk{color:var(--red);display:inline-flex}
+  .tarif-notes .chk svg{width:18px;height:18px;stroke-width:2.4}
+
+  /* ---------- Galerie ---------- */
+  .galerie{background:var(--bg)}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .gallery a{overflow:hidden;border-radius:14px;display:block;aspect-ratio:1;box-shadow:0 6px 20px rgba(31,56,100,.1)}
+  .gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .gallery a:hover img{transform:scale(1.12)}
+
+  /* ---------- Témoignages ---------- */
+  .temoignages{background:#fff}
+  .avis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .avis{background:var(--bg);border:1px dashed var(--line);border-radius:16px;padding:28px;text-align:center;color:var(--muted)}
+  .avis .stars{color:#d7dde5;font-size:20px;letter-spacing:3px;margin-bottom:12px}
+  .avis .who{color:var(--navy);font-weight:700;margin-top:14px}
+  .avis .soon{display:inline-block;background:var(--cyan);color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.04em}
+
+  /* ---------- Calendrier ---------- */
+  .calendrier{background:var(--navy);color:#fff}
+  .calendrier .section-title{color:#fff}
+  .calendrier .section-title::after{background:var(--cyan)}
+  .cal-box{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:44px 30px;text-align:center;max-width:720px;margin:0 auto}
+  .cal-box .ico{width:56px;height:56px;margin:0 auto 16px;color:var(--cyan);display:flex;align-items:center;justify-content:center}
+  .cal-box .ico svg{width:44px;height:44px;stroke-width:1.6}
+  .cal-box p{opacity:.9;font-size:16px}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+  .info-list{list-style:none}
+  .info-list li{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .info-list li b{color:var(--navy);min-width:110px;display:inline-block}
+  .socials{display:flex;gap:14px;margin-top:20px}
+  .socials a{background:var(--navy);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;transition:.18s}
+  .socials a:hover{background:var(--red);transform:translateY(-3px)}
+  .map iframe{width:100%;height:100%;min-height:320px;border:0;border-radius:16px;box-shadow:0 10px 30px rgba(31,56,100,.12)}
+
+  /* ---------- Nous rejoindre ---------- */
+  .rejoindre{background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 100%);color:#fff}
+  .rejoindre .section-title{color:#fff}
+  .rejoindre .section-title::after{background:#fff}
+  .rejoindre .section-sub{color:#fff;opacity:.95}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:0 auto 38px;max-width:900px}
+  .step{background:rgba(255,255,255,.12);border-radius:16px;padding:30px 24px;text-align:center;backdrop-filter:blur(2px)}
+  .step .num{width:40px;height:40px;border-radius:50%;background:#fff;color:var(--red);font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:18px}
+  .step b{display:block;margin-bottom:8px;font-size:16px}
+  .step p{font-size:14px;opacity:.92}
+  .rejoindre .btn-primary{background:#fff;color:var(--red)}
+  .rejoindre .btn-primary:hover{background:#f1f1f1}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--navy-dark);color:#cbd5e0;padding:38px 24px;font-size:14px}
+  .foot-wrap{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .foot-brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:700}
+  .foot-brand img{height:42px}
+  .foot-socials{display:flex;gap:12px}
+  .foot-socials a{color:#fff;font-weight:700;background:rgba(255,255,255,.1);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.18s}
+  .foot-socials a:hover{background:var(--red)}
+
+  @media (max-width:860px){
+    .nav-links{position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;padding:16px 24px;gap:14px;border-bottom:1px solid var(--line);display:none;box-shadow:0 12px 24px rgba(31,56,100,.1)}
+    .nav-links.open{display:flex}
+    .nav-cta{width:100%;text-align:center}
+    .burger{display:block}
+    .cards,.niveau-list,.tarif-grid,.gallery,.avis-grid{grid-template-columns:1fr}
+    .gallery{grid-template-columns:1fr 1fr}
+    .split,.contact-grid{grid-template-columns:1fr;gap:26px}
+    .hero{padding:90px 24px 96px}
+    .hero h1{font-size:31px}
+    .foot-wrap{flex-direction:column;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#accueil">Aller au contenu</a>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#accueil"><img src="assets/logo.png" alt="Logo Réflexe Escrime Club"> Réflexe Escrime Club</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#accueil">Accueil</a>
+      <a href="#club">Le Club</a>
+      <a href="#activites">Activités</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+      <a href="#rejoindre" class="nav-cta">Nous rejoindre</a>
+    </nav>
+    <button class="burger" id="burgerBtn" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+
+<main>
+
+<!-- 1. HERO -->
+<section class="hero" id="accueil">
+  <div class="container">
+    <h1>Club d'escrime loisir et compétition à Abidjan</h1>
+    <p>Débutants, amateurs ou compétiteurs, enfants et adultes : découvrez l'escrime avec le Réflexe Escrime Club.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#rejoindre">Nous rejoindre</a>
+      <a class="btn btn-outline" href="#club">Découvrir le club</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2. LE CLUB -->
+<section id="club" class="club-alt">
+  <div class="container">
+    <h2 class="section-title reveal">Notre mission</h2>
+    <p class="section-sub reveal">Rendre l'escrime accessible à tous en Côte d'Ivoire afin de transmettre les valeurs et les techniques de ce prestigieux sport de combat.</p>
+    <div class="split reveal">
+      <div>
+        <h2>Le Réflexe Escrime Club</h2>
+        <p>Une structure dédiée à l'apprentissage et au perfectionnement de l'escrime, ouverte à tous les publics — des plus jeunes aux adultes — avec des entraînements adaptés à chaque niveau.</p>
+        <p>Un encadrement expérimenté, un suivi personnalisé et une ambiance familiale pour progresser ensemble, en loisir comme en compétition.</p>
+      </div>
+      <img src="assets/masque-equipement.jpg" alt="Équipement d'escrime : masque et épée">
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <h3>Encadrement de qualité</h3>
+        <p>Des entraîneurs expérimentés assurent un suivi personnalisé de chaque adhérent.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M12 14v3"/><path d="M9 20h6"/><path d="M9.5 20a2.5 2.5 0 0 1 5 0"/></svg>
+        </div>
+        <h3>Compétitions régulières</h3>
+        <p>Nous participons aux événements nationaux et internationaux d'escrime.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2A4.6 4.6 0 0 1 21 18.5"/></svg>
+        </div>
+        <h3>Esprit familial</h3>
+        <p>Une ambiance conviviale et motivante pour progresser ensemble, à tout âge.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. ACTIVITÉS -->
+<section id="activites" class="activites">
+  <div class="container">
+    <h2 class="section-title reveal">Nos activités</h2>
+    <p class="section-sub reveal">Des séances conçues pour s'adapter à tous les niveaux, du premier contact avec l'épée jusqu'à la préparation aux tournois.</p>
+    <div class="niveau-list">
+      <div class="niveau reveal"><b>Débutants</b><p>Initiation aux bases : maniement de l'épée, déplacements, règles fondamentales.</p></div>
+      <div class="niveau reveal"><b>Confirmés</b><p>Techniques avancées, tactique et perfectionnement.</p></div>
+      <div class="niveau reveal"><b>Compétiteurs</b><p>Préparation physique et mentale aux tournois.</p></div>
+    </div>
+    <div class="planning reveal">
+      <table>
+        <tr><th>Jour</th><th>Horaire</th></tr>
+        <tr><td>Mercredi</td><td>15h00 — 17h00</td></tr>
+        <tr><td>Samedi</td><td>08h00 — 10h00</td></tr>
+      </table>
+    </div>
+    <p class="lieu reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.5-6.5-10.5A6.5 6.5 0 0 1 12 4a6.5 6.5 0 0 1 6.5 6.5C18.5 15.5 12 21 12 21Z"/><circle cx="12" cy="10.5" r="2.4"/></svg> Salle CAP SPORT International, Cocody Riviera Palmeraie</p>
+  </div>
+</section>
+
+<!-- 4. TARIFS -->
+<section id="tarifs" class="tarifs">
+  <div class="container">
+    <h2 class="section-title reveal">Tarifs</h2>
+    <p class="section-sub reveal">Une formule unique pour s'entraîner au club, et des cours particuliers sur demande. Première séance d'essai offerte.</p>
+    <div class="tarif-grid">
+      <div class="tarif tarif-main reveal">
+        <div class="label">Formule club</div>
+        <ul class="tarif-lines">
+          <li><span>Adhésion annuelle</span><b>30 000 <span>FCFA</span></b></li>
+          <li><span>Cours collectifs au club</span><b>20 000 <span>FCFA</span> <em>/ mois</em></b></li>
+        </ul>
+        <p class="desc">L'adhésion annuelle se règle une fois à l'inscription. La cotisation mensuelle de 20 000 FCFA couvre les cours collectifs au club.</p>
+        <a class="btn btn-primary" href="https://wa.me/2250704756341?text=Bonjour%2C%20je%20souhaite%20m%27inscrire%20au%20Réflexe%20Escrime%20Club%20(formule%20club)." target="_blank" rel="noopener">S'inscrire</a>
+      </div>
+      <div class="tarif reveal">
+        <div class="label">Cours particuliers</div>
+        <div class="price">Sur mesure</div>
+        <p class="desc">Envie d'un accompagnement individuel ? Contactez-nous pour définir ensemble le rythme, les objectifs et les conditions.</p>
+        <a class="btn btn-primary" href="https://wa.me/2250704756341?text=Bonjour%2C%20je%20souhaite%20discuter%20de%20cours%20particuliers%20d%27escrime." target="_blank" rel="noopener">En discuter</a>
+      </div>
+    </div>
+    <div class="tarif-notes reveal">
+      <span><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4 10-11"/></svg></span> Première séance d'essai offerte</span>
+      <span><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4 10-11"/></svg></span> Matériel fourni pour débuter</span>
+    </div>
+  </div>
+</section>
+
+<!-- 5. GALERIE -->
+<section id="galerie" class="galerie">
+  <div class="container">
+    <h2 class="section-title reveal">Galerie</h2>
+    <p class="section-sub reveal">Quelques instants de compétition et d'entraînement de nos escrimeurs.</p>
+    <div class="gallery reveal">
+      <a href="assets/galerie/galerie-1.jpg" target="_blank" rel="noopener"><img src="assets/galerie/galerie-1.jpg" alt="Escrimeur du club en tenue complète, bras levé après un assaut" loading="lazy"></a>
+      <a href="assets/galerie/galerie-2.jpg" target="_blank" rel="noopener"><img src="assets/galerie/galerie-2.jpg" alt="Escrimeur ivoirien épée en main, masque à la main, sur la piste" loading="lazy"></a>
+      <a href="assets/galerie/galerie-3.jpg" target="_blank" rel="noopener"><img src="assets/galerie/galerie-3.jpg" alt="Duel d'épée entre deux escrimeurs en pleine action" loading="lazy"></a>
+      <a href="assets/galerie/galerie-4.jpg" target="_blank" rel="noopener"><img src="assets/galerie/galerie-4.jpg" alt="Escrimeur bondissant lors d'une touche en compétition" loading="lazy"></a>
+      <a href="assets/galerie/galerie-5.jpg" target="_blank" rel="noopener"><img src="assets/galerie/galerie-5.jpg" alt="Fente offensive lors d'un assaut international d'épée" loading="lazy"></a>
+      <a href="assets/galerie/galerie-6.jpg" target="_blank" rel="noopener"><img src="assets/galerie/galerie-6.jpg" alt="Escrimeur du club sur le podium, médaille autour du cou" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. TÉMOIGNAGES -->
+<section id="temoignages" class="temoignages">
+  <div class="container">
+    <h2 class="section-title reveal">Témoignages</h2>
+    <p class="section-sub reveal">La parole à nos membres. Cette section accueillera bientôt leurs avis.</p>
+    <div class="avis-grid">
+      <div class="avis reveal">
+        <div class="stars">★★★★★</div>
+        <span class="soon">Bientôt : votre témoignage</span>
+        <div class="who">Prénom d'un membre</div>
+      </div>
+      <div class="avis reveal">
+        <div class="stars">★★★★★</div>
+        <span class="soon">Bientôt : votre témoignage</span>
+        <div class="who">Prénom d'un membre</div>
+      </div>
+      <div class="avis reveal">
+        <div class="stars">★★★★★</div>
+        <span class="soon">Bientôt : votre témoignage</span>
+        <div class="who">Prénom d'un membre</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. CALENDRIER -->
+<section id="competitions" class="calendrier">
+  <div class="container">
+    <h2 class="section-title reveal">Compétitions à venir</h2>
+    <div class="cal-box reveal">
+      <div class="ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 3v4"/><path d="M16 3v4"/></svg>
+      </div>
+      <p>Le calendrier de la saison prochaine sera publié ici.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8. NOUS REJOINDRE -->
+<section id="rejoindre" class="rejoindre">
+  <div class="container" style="text-align:center">
+    <h2 class="section-title reveal">Nous rejoindre</h2>
+    <p class="section-sub reveal">Envie de pratiquer l'escrime ? C'est simple, en trois étapes.</p>
+    <div class="steps">
+      <div class="step reveal"><div class="num">1</div><b>Nous contacter</b><p>Écrivez-nous ou appelez-nous sur l'un de nos contacts.</p></div>
+      <div class="step reveal"><div class="num">2</div><b>Première séance offerte</b><p>Venez essayer sans engagement.</p></div>
+      <div class="step reveal"><div class="num">3</div><b>Équipez-vous</b><p>Nous mettons à disposition le matériel nécessaire pour débuter.</p></div>
+    </div>
+    <a class="btn btn-primary reveal" href="https://wa.me/2250704756341?text=Bonjour%2C%20je%20souhaite%20rejoindre%20le%20Réflexe%20Escrime%20Club." target="_blank" rel="noopener">Nous écrire sur WhatsApp</a>
+  </div>
+</section>
+
+<!-- 9. CONTACT -->
+<section id="contact" class="club-alt">
+  <div class="container">
+    <h2 class="section-title reveal">Contact</h2>
+    <p class="section-sub reveal">Une question, envie de rejoindre le club ? Nous serions ravis d'échanger avec vous.</p>
+    <div class="contact-grid">
+      <div class="reveal">
+        <ul class="info-list">
+          <li><b>Adresse</b> Abidjan, Cocody Riviera Palmeraie, non loin de la pharmacie Marie Esther</li>
+          <li><b>Téléphone</b> <a href="tel:+2250758408265">+225 07 58 40 82 65</a></li>
+          <li><b>WhatsApp</b> <a href="https://wa.me/2250704756341" target="_blank" rel="noopener">+225 07 04 75 63 41</a></li>
+          <li><b>Email</b> <a href="mailto:clubescrimereflexe@gmail.com">clubescrimereflexe@gmail.com</a></li>
+        </ul>
+        <div class="socials">
+          <a href="https://www.facebook.com/ReflexeEC" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/reflexeec" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+      <div class="map reveal">
+        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation du club"
+          src="https://maps.google.com/maps?q=5.376638,-3.960144&z=17&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 10. FOOTER -->
+<footer>
+  <div class="foot-wrap">
+    <div class="foot-brand"><img src="assets/logo.png" alt="Logo Réflexe Escrime Club"> Réflexe Escrime Club</div>
+    <div>© <span id="year"></span> Réflexe Escrime Club — Abidjan, Côte d'Ivoire</div>
+    <div class="foot-socials">
+      <a href="https://www.facebook.com/ReflexeEC" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+      <a href="https://www.instagram.com/reflexeec" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const burger = document.getElementById('burgerBtn');
+  const links = document.getElementById('navLinks');
+  burger.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Scroll-spy : surligne le lien de la section visible
+  const navMap = new Map();
+  links.querySelectorAll('a[href^="#"]').forEach(a => {
+    const id = a.getAttribute('href').slice(1);
+    const sec = document.getElementById(id);
+    if (sec) navMap.set(sec, a);
+  });
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      const a = navMap.get(e.target);
+      if (!a) return;
+      if (e.isIntersecting){
+        links.querySelectorAll('a').forEach(x => x.classList.remove('active'));
+        a.classList.add('active');
+      }
+    });
+  }, {rootMargin:'-45% 0px -50% 0px'});
+  navMap.forEach((a, sec) => spy.observe(sec));
+</script>
+</body>
+</html>

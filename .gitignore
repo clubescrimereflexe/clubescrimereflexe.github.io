@@ -1,0 +1,4 @@
+# Documents de conception internes (prompt, guides) — jamais publiés
+# sur le dépôt public : seul ce qui sert le site (index.html + assets/) l'est.
+*.md
+Proposition-modernisation-GoogleSites.html
