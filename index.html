@@ -5,14 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Réflexe Escrime Club — Escrime à Abidjan, Cocody</title>
 <meta name="description" content="Réflexe Escrime Club : club d'escrime loisir et compétition à Abidjan, Cocody Riviera Palmeraie. Débutants, amateurs et compétiteurs, enfants et adultes bienvenus.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://clubescrimereflexe.github.io/">
 <meta name="theme-color" content="#1F3864">
 <link rel="icon" href="assets/logo.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/logo.png">
 <!-- Open Graph / partage sur les réseaux -->
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://clubescrimereflexe.github.io/">
 <meta property="og:title" content="Réflexe Escrime Club — Escrime à Abidjan, Cocody">
 <meta property="og:description" content="Club d'escrime loisir et compétition à Abidjan, Cocody Riviera Palmeraie. Débutants, amateurs et compétiteurs, enfants et adultes bienvenus.">
-<meta property="og:image" content="assets/hero-bg.jpg">
+<meta property="og:image" content="https://clubescrimereflexe.github.io/assets/hero-bg.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <!-- Polices (repli système automatique si hors-ligne) -->
@@ -197,6 +200,16 @@
   .rejoindre .btn-primary{background:#fff;color:var(--red)}
   .rejoindre .btn-primary:hover{background:#f1f1f1}
 
+  /* ---------- FAQ ---------- */
+  .faq{background:#fff;max-width:760px;margin:0 auto}
+  .faq details{border-bottom:1px solid var(--line);padding:20px 4px}
+  .faq details:first-child{border-top:1px solid var(--line)}
+  .faq summary{display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;color:var(--navy);font-weight:700;font-size:16px;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary .chevron{flex-shrink:0;width:20px;height:20px;color:var(--red);transition:transform .2s ease}
+  .faq details[open] summary .chevron{transform:rotate(180deg)}
+  .faq p{color:var(--muted);font-size:14.5px;margin-top:12px;line-height:1.65}
+
   /* ---------- Footer ---------- */
   footer{background:var(--navy-dark);color:#cbd5e0;padding:38px 24px;font-size:14px}
   .foot-wrap{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
@@ -222,6 +235,112 @@
     .foot-wrap{flex-direction:column;text-align:center}
   }
 </style>
+<!-- Données structurées : club (adresse, horaires, tarifs, réseaux) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsClub",
+  "name": "Réflexe Escrime Club",
+  "alternateName": "Réflexe EC",
+  "description": "Club d'escrime loisir et compétition à Abidjan, Cocody Riviera Palmeraie, Côte d'Ivoire. Ouvert aux enfants et aux adultes, débutants comme compétiteurs.",
+  "url": "https://clubescrimereflexe.github.io/",
+  "logo": "https://clubescrimereflexe.github.io/assets/logo.png",
+  "image": "https://clubescrimereflexe.github.io/assets/hero-bg.jpg",
+  "sport": "Escrime",
+  "telephone": "+225 07 58 40 82 65",
+  "email": "clubescrimereflexe@gmail.com",
+  "priceRange": "20000-30000 XOF",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Cocody Riviera Palmeraie, non loin de la pharmacie Marie Esther",
+    "addressLocality": "Abidjan",
+    "addressCountry": "CI"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 5.376638,
+    "longitude": -3.960144
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "15:00", "closes": "17:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "10:00" }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/ReflexeEC",
+    "https://www.instagram.com/reflexeec"
+  ],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "name": "Adhésion annuelle",
+      "price": "30000",
+      "priceCurrency": "XOF",
+      "description": "Adhésion annuelle réglée une fois à l'inscription."
+    },
+    {
+      "@type": "Offer",
+      "name": "Cours collectifs au club",
+      "price": "20000",
+      "priceCurrency": "XOF",
+      "description": "Cotisation mensuelle couvrant les cours collectifs au club."
+    },
+    {
+      "@type": "Offer",
+      "name": "Cours particuliers",
+      "description": "Accompagnement individuel sur mesure, conditions définies au cas par cas."
+    }
+  ]
+}
+</script>
+<!-- Données structurées : questions fréquentes (correspond au contenu visible de la section #faq) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Où se trouve le Réflexe Escrime Club ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le club s'entraîne à la Salle CAP SPORT International, à Cocody Riviera Palmeraie, Abidjan, Côte d'Ivoire, non loin de la pharmacie Marie Esther."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quels sont les horaires d'entraînement ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les entraînements ont lieu le mercredi de 15h00 à 17h00 et le samedi de 08h00 à 10h00."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quel est le tarif pour s'inscrire au Réflexe Escrime Club ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'adhésion annuelle est de 30 000 FCFA, à laquelle s'ajoute une cotisation de 20 000 FCFA par mois pour les cours collectifs au club. Des cours particuliers sont également proposés, sur devis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le club accepte-t-il les débutants ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, le club accueille aussi bien les débutants que les compétiteurs, enfants et adultes. La première séance d'essai est offerte et le matériel est fourni pour débuter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment s'inscrire ou poser une question au club ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Il suffit de contacter le club par WhatsApp, téléphone ou email — les coordonnées sont indiquées dans la section Contact du site."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -415,6 +534,36 @@
       <div class="step reveal"><div class="num">3</div><b>Équipez-vous</b><p>Nous mettons à disposition le matériel nécessaire pour débuter.</p></div>
     </div>
     <a class="btn btn-primary reveal" href="https://wa.me/2250704756341?text=Bonjour%2C%20je%20souhaite%20rejoindre%20le%20Réflexe%20Escrime%20Club." target="_blank" rel="noopener">Nous écrire sur WhatsApp</a>
+  </div>
+</section>
+
+<!-- 8bis. FAQ -->
+<section id="faq" class="club-alt">
+  <div class="container">
+    <h2 class="section-title reveal">Questions fréquentes</h2>
+    <p class="section-sub reveal">Les réponses aux questions les plus courantes sur le club.</p>
+    <div class="faq reveal">
+      <details>
+        <summary>Où se trouve le Réflexe Escrime Club ?<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>Le club s'entraîne à la Salle CAP SPORT International, à Cocody Riviera Palmeraie, Abidjan, Côte d'Ivoire, non loin de la pharmacie Marie Esther.</p>
+      </details>
+      <details>
+        <summary>Quels sont les horaires d'entraînement ?<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>Les entraînements ont lieu le mercredi de 15h00 à 17h00 et le samedi de 08h00 à 10h00.</p>
+      </details>
+      <details>
+        <summary>Quel est le tarif pour s'inscrire ?<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>L'adhésion annuelle est de 30 000 FCFA, à laquelle s'ajoute une cotisation de 20 000 FCFA par mois pour les cours collectifs au club. Des cours particuliers sont également proposés, sur devis.</p>
+      </details>
+      <details>
+        <summary>Le club accepte-t-il les débutants ?<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>Oui, le club accueille aussi bien les débutants que les compétiteurs, enfants et adultes. La première séance d'essai est offerte et le matériel est fourni pour débuter.</p>
+      </details>
+      <details>
+        <summary>Comment s'inscrire ou poser une question ?<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>Il suffit de contacter le club par WhatsApp, téléphone ou email — les coordonnées sont indiquées dans la section Contact du site.</p>
+      </details>
+    </div>
   </div>
 </section>
 

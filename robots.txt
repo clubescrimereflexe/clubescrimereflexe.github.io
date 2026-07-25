@@ -1,0 +1,36 @@
+# Réflexe Escrime Club — accès ouvert à tous les robots, y compris les IA génératives
+User-agent: *
+Allow: /
+
+# Robots d'IA générative explicitement autorisés (GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://clubescrimereflexe.github.io/sitemap.xml
