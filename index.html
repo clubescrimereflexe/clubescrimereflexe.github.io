@@ -120,8 +120,11 @@
   .planning th{background:var(--navy);color:#fff;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
   .planning tr:nth-child(even) td{background:#fafbfc}
   .planning td:last-child{font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
-  .lieu{text-align:center;margin-top:22px;color:var(--muted);font-size:15px;display:flex;align-items:center;justify-content:center;gap:8px}
-  .lieu svg{width:18px;height:18px;stroke-width:1.7;color:var(--red);flex-shrink:0}
+  .planning-lieu{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:rgba(31,56,100,.06);border-top:1px solid var(--line);padding:16px 22px}
+  .planning-lieu svg{width:20px;height:20px;stroke-width:1.8;color:var(--navy);flex-shrink:0}
+  .planning-lieu span{color:var(--navy);font-weight:700;font-size:14.5px;flex:1;min-width:180px}
+  .planning-lieu a{color:var(--red);font-weight:700;font-size:14px;white-space:nowrap;display:inline-flex;align-items:center;gap:4px}
+  .planning-lieu a:hover{color:var(--red-dark)}
 
   /* ---------- Tarifs ---------- */
   .tarifs{background:#fff}
@@ -307,8 +310,12 @@
         <tr><td>Mercredi</td><td>15h00 — 17h00</td></tr>
         <tr><td>Samedi</td><td>08h00 — 10h00</td></tr>
       </table>
+      <div class="planning-lieu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.5-6.5-10.5A6.5 6.5 0 0 1 12 4a6.5 6.5 0 0 1 6.5 6.5C18.5 15.5 12 21 12 21Z"/><circle cx="12" cy="10.5" r="2.4"/></svg>
+        <span>Salle CAP SPORT International, Cocody Riviera Palmeraie</span>
+        <a href="https://www.google.com/maps/search/?api=1&query=5.376638,-3.960144" target="_blank" rel="noopener">Itinéraire →</a>
+      </div>
     </div>
-    <p class="lieu reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.5-6.5-10.5A6.5 6.5 0 0 1 12 4a6.5 6.5 0 0 1 6.5 6.5C18.5 15.5 12 21 12 21Z"/><circle cx="12" cy="10.5" r="2.4"/></svg> Salle CAP SPORT International, Cocody Riviera Palmeraie</p>
   </div>
 </section>
 
