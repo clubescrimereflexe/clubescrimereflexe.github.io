@@ -24,16 +24,17 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap">
 <style>
   :root{
-    --navy:#1F3864;
-    --navy-dark:#12213d;
-    --red:#e2211c;
-    --red-dark:#a8160f;
-    --cyan:#2FB2E6;
+    /* Charte B — sobriété marquée (2026-09) */
+    --navy:#223961;
+    --navy-dark:#172742;
+    --red:#82312F;
+    --red-dark:#5e2322;
+    --neutral:#8A93A6;
     /* Triplets RGB des couleurs ci-dessus, pour les ombres/dégradés teintés (rgba() ne peut pas lire un hex var()) */
-    --navy-rgb:31,56,100;
-    --navy-dark-rgb:18,33,61;
-    --red-rgb:226,33,28;
-    --red-dark-rgb:168,22,15;
+    --navy-rgb:34,57,97;
+    --navy-dark-rgb:23,39,66;
+    --red-rgb:130,49,47;
+    --red-dark-rgb:94,35,34;
     --bg:#f5f7fa;
     --line:#e2e8f0;
     --text:#1a202c;
@@ -49,7 +50,7 @@
   img{max-width:100%;display:block}
   .container{max-width:1140px;margin:0 auto;padding:0 24px}
   /* Accessibilité : focus clavier visible */
-  a:focus-visible,button:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:4px}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--navy);outline-offset:3px;border-radius:4px}
   /* Ancrage sous le header sticky */
   section[id]{scroll-margin-top:84px}
   /* Lien d'évitement pour lecteurs d'écran / clavier */
@@ -170,14 +171,14 @@
   .avis{background:var(--bg);border:1px dashed var(--line);border-radius:16px;padding:28px;text-align:center;color:var(--muted)}
   .avis .stars{color:#d7dde5;font-size:20px;letter-spacing:3px;margin-bottom:12px}
   .avis .who{color:var(--navy);font-weight:700;margin-top:14px}
-  .avis .soon{display:inline-block;background:var(--cyan);color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.04em}
+  .avis .soon{display:inline-block;color:var(--muted);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
 
   /* ---------- Calendrier ---------- */
   .calendrier{background:var(--navy);color:#fff}
   .calendrier .section-title{color:#fff}
-  .calendrier .section-title::after{background:var(--cyan)}
+  .calendrier .section-title::after{background:var(--neutral)}
   .cal-box{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:44px 30px;text-align:center;max-width:720px;margin:0 auto}
-  .cal-box .ico{width:56px;height:56px;margin:0 auto 16px;color:var(--cyan);display:flex;align-items:center;justify-content:center}
+  .cal-box .ico{width:56px;height:56px;margin:0 auto 16px;color:var(--neutral);display:flex;align-items:center;justify-content:center}
   .cal-box .ico svg{width:44px;height:44px;stroke-width:1.6}
   .cal-box p{opacity:.9;font-size:16px}
 
